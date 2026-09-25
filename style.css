@@ -385,6 +385,10 @@ button {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+.project-showcase--reverse {
+  flex-direction: row-reverse;
+}
+
 /* Large Color Backdrops */
 .project-showcase__banner {
   flex: 1.1;
