@@ -303,3 +303,56 @@ button {
 .profile__bio--secondary {
   color: var(--color-text-muted);
 }
+
+/* Right Column: Branded Tech Cards Grid (Matching benscott.dev) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent-red);
+  box-shadow: 0 10px 24px rgba(255, 77, 90, 0.18);
+}
+
+.skill-card__icon {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-card__icon.cpp { color: #51a2e9; border: 1px solid rgba(81, 162, 233, 0.4); }
+.skill-card__icon.python { color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); }
+.skill-card__icon.pytorch { color: #ff4d5a; border: 1px solid rgba(255, 77, 90, 0.4); }
+.skill-card__icon.vector { color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
+.skill-card__icon.dart { color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.4); }
+.skill-card__icon.flutter { color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+.skill-card__icon.ts { color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.4); }
+.skill-card__icon.fastapi { color: #009688; border: 1px solid rgba(0, 150, 136, 0.4); }
+.skill-card__icon.postgres { color: #336791; border: 1px solid rgba(51, 103, 145, 0.4); }
+.skill-card__icon.localai { color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.4); }
+.skill-card__icon.docker { color: #2496ed; border: 1px solid rgba(36, 150, 237, 0.4); }
+.skill-card__icon.git { color: #f05032; border: 1px solid rgba(240, 80, 50, 0.4); }
+
+.skill-card__name {
+  font-size: 1.15rem;
