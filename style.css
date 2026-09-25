@@ -117,11 +117,21 @@ button {
 
 .heading__line-2 {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
-  font-weight: 300;
-  color: var(--color-text-light);
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  font-weight: 400;
+  color: var(--color-text-white);
   margin-top: 10px;
-  margin-bottom: 35px;
+  margin-bottom: 12px;
+}
+
+.heading__line-sub {
+  font-family: var(--font-body);
+  font-size: clamp(1.4rem, 1.8vw, 1.7rem);
+  font-weight: 300;
+  color: var(--color-text-subtle);
+  max-width: 680px;
+  margin: 0 auto 35px;
+  line-height: 1.6;
 }
 
 .heading-cta {
@@ -244,9 +254,9 @@ button {
 /* -------------------- About Section -------------------- */
 .about__content {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 
 .profile-card {
@@ -259,7 +269,7 @@ button {
 .profile__picture {
   width: 190px;
   height: 190px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -280,28 +290,114 @@ button {
   box-shadow: 0 14px 40px rgba(255, 77, 90, 0.5), 0 0 25px rgba(0, 0, 0, 0.7);
 }
 
-.avatar-svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 8px 24px rgba(255, 77, 90, 0.2));
-  transition: transform 0.3s ease;
+.profile__name {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
 }
 
-.avatar-svg:hover {
-  transform: scale(1.04);
+.profile__role-tag {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-accent-red);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
+.profile__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.profile__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: all 0.25s ease;
+}
+
+.profile__chip:hover {
+  background: rgba(255, 77, 90, 0.12);
+  border-color: rgba(255, 77, 90, 0.4);
+  color: var(--color-text-white);
+  transform: translateY(-2px);
+}
+
+.profile__chip .chip-accent {
+  font-size: 1.2rem;
+}
 
 .profile__bio {
   font-size: 1.55rem;
   color: var(--color-text-subtle);
-  line-height: 1.75;
+  line-height: 1.78;
   margin-bottom: 16px;
   text-align: left;
 }
 
 .profile__bio--secondary {
   color: var(--color-text-muted);
+}
+
+.highlight-text {
+  color: var(--color-text-white);
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(255, 77, 90, 0.6);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.highlight-text:hover {
+  color: var(--color-accent-red);
+  border-bottom-color: var(--color-accent-red);
+}
+
+.profile__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 16px 12px;
+  background: rgba(40, 40, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.profile__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-accent-red);
+  letter-spacing: 0.02em;
+}
+
+.profile__stat-lbl {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
 }
 
 /* Right Column: Branded Tech Cards Grid (Matching benscott.dev) */
@@ -885,6 +981,10 @@ button {
 }
 
 @media (max-width: 600px) {
+  .profile__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
