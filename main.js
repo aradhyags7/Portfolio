@@ -379,3 +379,10 @@ function startApp() {
     });
   });
 }
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startApp);
+} else {
+  startApp();
+}
+
