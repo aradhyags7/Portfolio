@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ARADHYA SHINDE — PORTFOLIO STYLESHEET
+   Aesthetic Reference: https://benscott.dev/
+   Typography: Raleway & Montserrat | Theme: Pure Charcoal & Vibrant Crimson
+   ========================================================================== */
+
+/* -------------------- Reset & Base -------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg-primary: #1a1a1a;
+  --color-bg-secondary: #252934;
+  --color-bg-surface: #282828;
+  --color-bg-deep: #111111;
+
+  --color-text-white: #ffffff;
+  --color-text-light: #fafafa;
+  --color-text-muted: #8c8c8c;
+  --color-text-subtle: #bbbbbb;
+
+  --color-accent-red: #ff4d5a;
+  --color-accent-cyan: #51a2e9;
+  --color-accent-purple: #a855f7;
+  --color-accent-emerald: #10b981;
+
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --max-content-width: 1200px;
+  --nav-height: 60px;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
