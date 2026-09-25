@@ -212,3 +212,33 @@ button {
 }
 
 /* -------------------- Common Section Elements -------------------- */
+.section {
+  padding: 100px 20px;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.section-heading-wrap {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 4.5vw, 4.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-white);
+  letter-spacing: 0.05em;
+}
+
+/* The Signature Ben Scott Underline Bar */
+.heading-bar {
+  width: 70px;
+  height: 4px;
+  background-color: var(--color-accent-red);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* -------------------- About Section -------------------- */
