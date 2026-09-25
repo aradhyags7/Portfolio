@@ -252,3 +252,71 @@ function initStickyNavbar() {
     });
   });
 }
+
+// -------------------- 4. Project Modal Handler --------------------
+function initProjectModals() {
+  const modal = document.getElementById("project-modal");
+  const modalContent = document.getElementById("modal-content");
+  const closeBtn = document.getElementById("modal-close-btn");
+  const learnBtns = document.querySelectorAll(".project-btn-learn");
+
+  if (!modal || !modalContent) return;
+
+  function openModal(projectId) {
+    const data = projectsData[projectId];
+    if (!data) return;
+
+    modalContent.innerHTML = `
+      <h3 class="modal-title">${data.title}</h3>
+      <div class="modal-tagline">${data.tagline}</div>
+      <p class="modal-body-text">${data.desc}</p>
+      
+      <div class="modal-metrics-grid">
+        ${data.metrics.map(m => `
+          <div>
+            <span class="m-val">${m.val}</span>
+            <span class="m-lbl">${m.lbl}</span>
+          </div>
+        `).join("")}
+      </div>
+
+      <div class="modal-tags">
+        ${data.tags.map(t => `<span class="m-tag">${t}</span>`).join("")}
+      </div>
+
+      <a href="${data.github}" target="_blank" rel="noopener noreferrer" class="modal-source-btn">
+        <span>VIEW SOURCE ON GITHUB</span>
+        <span>→</span>
+      </a>
+    `;
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  learnBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      openModal(id);
+    });
+  });
+
+  closeBtn?.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+}
