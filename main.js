@@ -341,4 +341,18 @@ function initContactForm() {
     });
   });
 
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("form-name").value;
+    const email = document.getElementById("form-email").value;
+    const message = document.getElementById("form-message").value;
+
+    if (statusDiv) {
+      statusDiv.innerHTML = `<span>✓ Thank you, ${name}! Your email client will open to send your message.</span>`;
+    }
+
+    setTimeout(() => {
+      window.location.href = `mailto:aradhyashinde2330@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
+    }, 600);
+  });
 }
