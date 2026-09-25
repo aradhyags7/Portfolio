@@ -86,8 +86,44 @@ function initConstellationCanvas() {
       const p = particles[i];
 
       p.x += p.vx;
-    requestAnimationFrame(animate);
-  }
-  resize();
-  animate();
-}
+      p.y += p.vy;
+
+      // Bounce off borders
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+
+      // Draw particle dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+
+      // Connect to mouse if nearby
+      if (mouse.x !== null && mouse.y !== null) {
+        const dxMouse = p.x - mouse.x;
+        const dyMouse = p.y - mouse.y;
+        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+        if (distMouse < mouse.maxDistance) {
+          const alpha = (1 - distMouse / mouse.maxDistance) * 0.6;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(255, 77, 90, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
+      // Connect particle to neighbors
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dx = p.x - p2.x;
+        const dy = p.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDistance) {
+          const alpha = (1 - dist / maxDistance) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
