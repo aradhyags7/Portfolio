@@ -543,6 +543,46 @@ button {
 }
 
 .project-btn-source {
+  border-bottom: 3px solid var(--color-accent-cyan);
+}
+
+.project-btn-source:hover {
+  color: var(--color-accent-cyan);
+  transform: translateY(-2px);
+}
+
+/* -------------------- Contact Section -------------------- */
+.contact {
+  text-align: center;
+}
+
+.contact__subtitle {
+  font-size: 1.7rem;
+  color: var(--color-text-light);
+  max-width: 580px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.contact-email-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-bottom: 40px;
+}
+
+.email-icon {
+  font-size: 1.8rem;
+  color: var(--color-accent-red);
+}
+
+.email-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
   justify-content: center;
   color: var(--color-text-white);
   transition: all 0.25s ease;
