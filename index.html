@@ -203,6 +203,44 @@
               <span class="circle red"></span>
               <span class="circle yellow"></span>
               <span class="circle green"></span>
+              <span class="mockup-title">adamem_continual_learning.py</span>
+            </div>
+            <div class="mockup-window__body">
+              <div class="code-line"><span class="c-kw">import</span> torch</div>
+              <div class="code-line"><span class="c-kw">from</span> adamem <span class="c-kw">import</span> FeatureDistributionEstimator</div>
+              <div class="code-line">fde = FeatureDistributionEstimator(latent_dim=512)</div>
+              <div class="code-line">loss = criterion(pred, y) + fde.regularization_penalty()</div>
+              <div class="code-status">
+                <span class="status-badge">&gt; PyTorch 2.2+</span>
+                <span class="status-badge">&gt; 15/15 Tests Passing</span>
+                <span class="status-badge">&gt; 89.2% Retention</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-showcase__content">
+          <h3 class="project-title">AdaMem-FDE</h3>
+          <h4 class="project-subtitle">Adaptive Neural Memory Framework</h4>
+          <p class="project-desc">
+            A continual learning deep neural network framework mitigating catastrophic forgetting through dynamic feature distribution estimation and selective episodic memory replay buffers.
+          </p>
+          <div class="project-links">
+            <button class="project-btn-learn" data-id="adamem-fde">LEARN MORE</button>
+            <a href="https://github.com/aradhyags7/AdaMem-FDE" target="_blank" rel="noopener noreferrer" class="project-btn-source">SOURCE CODE</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: Aegis -->
+      <article class="project-showcase" id="project-aegis">
+        <div class="project-showcase__banner banner--cyan">
+          <!-- Visual Mockup Card -->
+          <div class="mockup-window">
+            <div class="mockup-window__bar">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
     </div>
   </section>
 </body>
