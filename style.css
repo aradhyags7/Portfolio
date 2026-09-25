@@ -286,3 +286,20 @@ button {
   filter: drop-shadow(0 8px 24px rgba(255, 77, 90, 0.2));
   transition: transform 0.3s ease;
 }
+
+.avatar-svg:hover {
+  transform: scale(1.04);
+}
+
+
+.profile__bio {
+  font-size: 1.55rem;
+  color: var(--color-text-subtle);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.profile__bio--secondary {
+  color: var(--color-text-muted);
+}
