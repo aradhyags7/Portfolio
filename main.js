@@ -30,6 +30,64 @@ function initConstellationCanvas() {
   const maxDistance = 125;
   const mouse = { x: null, y: null, maxDistance: 160 };
 
+  function resize() {
+    const hero = document.getElementById("hero");
+    width = canvas.width = hero.offsetWidth;
+    height = canvas.height = hero.offsetHeight;
+    createParticles();
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = Math.floor((width * height) / 12000); // Dynamic density based on screen size
+    const particleCount = Math.min(Math.max(count, 45), 95);
+
+    for (let i = 0; i < particleCount; i++) {
+      const isAccent = Math.random() > 0.85;
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.9,
+        vy: (Math.random() - 0.5) * 0.9,
+        radius: isAccent ? 2.5 : 1.8,
+        color: isAccent ? "rgba(255, 77, 90, 0.8)" : "rgba(81, 162, 233, 0.7)"
+      });
+    }
+  }
+
+  window.addEventListener("resize", resize);
+
+  window.addEventListener("mousemove", (e) => {
+    const heroRect = canvas.getBoundingClientRect();
+    if (
+      e.clientX >= heroRect.left &&
+      e.clientX <= heroRect.right &&
+      e.clientY >= heroRect.top &&
+      e.clientY <= heroRect.bottom
+    ) {
+      mouse.x = e.clientX - heroRect.left;
+      mouse.y = e.clientY - heroRect.top;
+    } else {
+      mouse.x = null;
+      mouse.y = null;
+    }
+  });
+
+  window.addEventListener("mouseleave", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Update & draw particles
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
+      p.x += p.vx;
+    requestAnimationFrame(animate);
   }
   resize();
+  animate();
 }
