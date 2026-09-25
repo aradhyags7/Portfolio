@@ -382,6 +382,7 @@ button {
 .project-showcase:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Large Color Backdrops */
