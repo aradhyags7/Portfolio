@@ -41,6 +41,30 @@ const projectsData = {
     ],
     tags: ["TypeScript", "Ollama", "Faster-Whisper", "Local LLMs", "Desktop App", "Audio Streaming"],
     github: "https://github.com/aradhyags7/Aegis"
+  },
+  twoofus: {
+    title: "TwoOfUs",
+    tagline: "Private & Secure Couple Space (Flutter / FastAPI / E2EE)",
+    desc: "TwoOfUs is an intimate, zero-knowledge end-to-end encrypted (E2EE) private ecosystem designed for two connected partners. Built with Flutter (Android/iOS) and FastAPI (Python 3.11 + Render PostgreSQL), it provides on-device Curve25519 (X25519 ECDH) key agreements, XSalsa20-Poly1305 authenticated ciphers, out-of-band 60-digit safety numbers with QR scanning (Signal standard), multi-method 2FA (TOTP + Email OTP + 8 backup codes), real-time encrypted messaging, ephemeral view-once media, and real-time call signaling.",
+    metrics: [
+      { val: "Zero-Knowledge", lbl: "Curve25519 E2EE" },
+      { val: "35/35", lbl: "Automated Tests (100%)" },
+      { val: "Multi-Method", lbl: "TOTP + 2FA System" }
+    ],
+    tags: ["Flutter", "Dart", "FastAPI", "Python 3.11", "PostgreSQL", "Curve25519", "XSalsa20-Poly1305", "Render Cloud"],
+    github: "https://github.com/aradhyags7/TwoOfUs"
+  },
+  smriti: {
+    title: "Smriti (स्मृति / সোঁৱৰণি)",
+    tagline: "AI-Powered Cognitive Care Platform for Dementia & MCI",
+    desc: "Smriti is an assistive healthcare platform engineered to bridge the critical dementia and Mild Cognitive Impairment (MCI) care gap, with dedicated focus on India's North Eastern Region (NER). Delivering an offline-first, voice-driven, and culturally contextualized ecosystem, it combines Cognitive Stimulation Therapy (CST), reminiscence therapy in regional dialects (Assamese, Bengali, Hindi), caregiver cognitive progression tracking, and village-level ASHA healthcare worker triaging.",
+    metrics: [
+      { val: "87 | 323", lbl: "Backend & Flutter Tests" },
+      { val: "Offline-First", lbl: "Edge AI Architecture" },
+      { val: "NER India", lbl: "Culturally Contextual" }
+    ],
+    tags: ["Flutter 3.19+", "FastAPI", "PostgreSQL 15+", "Python 3.11+", "Cognitive Care", "Dementia Therapy", "Healthcare"],
+    github: "https://github.com/aradhyags7/Smriti"
 };
     tagline: "Collaborative Academic Note & Doubt Hub (Flutter / Firebase)",
     desc: "Resource Shelf is a cross-platform Flutter application built to centralize academic learning materials and encourage peer-to-peer academic support. It replaces scattered study materials with structured subject-wise channels, interactive PDF/image note viewing and cloud storage, real-time doubt discussion forums, and user study libraries.",
