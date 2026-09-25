@@ -320,3 +320,25 @@ function initProjectModals() {
     }
   });
 }
+
+// -------------------- 5. Contact Form & Copy Email --------------------
+function initContactForm() {
+  const copyBtn = document.getElementById("copy-email-btn");
+  const emailText = document.getElementById("email-text")?.innerText || "aradhyashinde2330@gmail.com";
+  const contactForm = document.getElementById("contact-form");
+  const statusDiv = document.getElementById("form-status");
+
+  copyBtn?.addEventListener("click", () => {
+    navigator.clipboard.writeText(emailText).then(() => {
+      copyBtn.innerText = "Copied!";
+      copyBtn.style.backgroundColor = "#ff4d5a";
+      copyBtn.style.color = "#ffffff";
+      setTimeout(() => {
+        copyBtn.innerText = "Copy";
+        copyBtn.style.backgroundColor = "";
+        copyBtn.style.color = "";
+      }, 2000);
+    });
+  });
+
+}
