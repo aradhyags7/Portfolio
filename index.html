@@ -166,6 +166,43 @@
               <span class="circle yellow"></span>
               <span class="circle green"></span>
               <span class="mockup-title">adaptivevec_avx2_benchmark.cpp</span>
+            </div>
+            <div class="mockup-window__body">
+              <div class="code-line"><span class="c-kw">#include</span> <span class="c-str">&lt;immintrin.h&gt;</span> <span class="c-comment">// AVX2 SIMD 256-bit</span></div>
+              <div class="code-line"><span class="c-type">__m256</span> v_diff = _mm256_sub_ps(v_query, v_target);</div>
+              <div class="code-line"><span class="c-type">__m256</span> v_sq = _mm256_mul_ps(v_diff, v_diff);</div>
+              <div class="code-line"><span class="c-func">greedy_beam_search</span>(query_vec, k_neighbors=10);</div>
+              <div class="code-status">
+                <span class="status-badge">&gt; Latency: 0.38ms</span>
+                <span class="status-badge">&gt; Recall@10: 98.7%</span>
+                <span class="status-badge">&gt; SIMD Speedup: 3.4x</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-showcase__content">
+          <h3 class="project-title">AdaptiveVec</h3>
+          <h4 class="project-subtitle">Vector Retrieval Proximity Graph</h4>
+          <p class="project-desc">
+            A density- and dimension-aware proximity graph index engineered for resource-constrained vector retrieval with Intel AVX2 SIMD acceleration. Published in Systems &amp; Machine Learning Research.
+          </p>
+          <div class="project-links">
+            <button class="project-btn-learn" data-id="adaptivevec">LEARN MORE</button>
+            <a href="https://github.com/aradhyags7/AdaptiveVec" target="_blank" rel="noopener noreferrer" class="project-btn-source">SOURCE CODE</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: AdaMem-FDE -->
+      <article class="project-showcase project-showcase--reverse" id="project-adamem">
+        <div class="project-showcase__banner banner--violet">
+          <!-- Visual Mockup Card -->
+          <div class="mockup-window">
+            <div class="mockup-window__bar">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
     </div>
   </section>
 </body>
