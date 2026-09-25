@@ -241,6 +241,43 @@
               <span class="circle red"></span>
               <span class="circle yellow"></span>
               <span class="circle green"></span>
+              <span class="mockup-title">aegis_local_assistant.ts</span>
+            </div>
+            <div class="mockup-window__body">
+              <div class="code-line"><span class="c-kw">const</span> whisper = <span class="c-kw">new</span> FasterWhisper({ quantized: <span class="c-str">"int8"</span> });</div>
+              <div class="code-line"><span class="c-kw">const</span> ollama = <span class="c-kw">new</span> OllamaLocal({ model: <span class="c-str">"llama3:8b"</span> });</div>
+              <div class="code-line">whisper.onAudioStream(chunk =&gt; ollama.streamTokens(chunk));</div>
+              <div class="code-status">
+                <span class="status-badge">&gt; 100% Offline</span>
+                <span class="status-badge">&gt; STT: &lt; 350ms</span>
+                <span class="status-badge">&gt; Zero Cloud Telemetry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-showcase__content">
+          <h3 class="project-title">Aegis</h3>
+          <h4 class="project-subtitle">Privacy-First AI Desktop Assistant</h4>
+          <p class="project-desc">
+            A privacy-first local AI desktop assistant inspired by J.A.R.V.I.S. Runs voice recognition and LLM inference entirely on localhost using Faster-Whisper and Ollama with zero cloud transmission.
+          </p>
+          <div class="project-links">
+            <button class="project-btn-learn" data-id="aegis">LEARN MORE</button>
+            <a href="https://github.com/aradhyags7/Aegis" target="_blank" rel="noopener noreferrer" class="project-btn-source">SOURCE CODE</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: TwoOfUs -->
+      <article class="project-showcase project-showcase--reverse" id="project-twoofus">
+        <div class="project-showcase__banner banner--crimson">
+          <!-- Visual Mockup Card -->
+          <div class="mockup-window">
+            <div class="mockup-window__bar">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
     </div>
   </section>
 </body>
