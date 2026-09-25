@@ -418,3 +418,48 @@ button {
   overflow: hidden;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
 }
+
+.mockup-window__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.circle.red { background-color: #ef4444; }
+.circle.yellow { background-color: #f59e0b; }
+.circle.green { background-color: #10b981; }
+
+.mockup-title {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-left: 6px;
+}
+
+.mockup-window__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1.25rem;
+}
+
+.code-line {
+  color: #e2e8f0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.c-kw { color: #f43f5e; font-weight: 600; }
+.c-str { color: #38bdf8; }
+.c-type { color: #a855f7; }
+.c-func { color: #10b981; }
+.c-comment { color: #64748b; font-style: italic; }
