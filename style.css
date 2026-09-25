@@ -93,3 +93,122 @@ button {
 .heading {
   position: relative;
   z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  pointer-events: none; /* Let canvas capture mouse hover */
+}
+
+.heading a, .heading button, .heading-cta {
+  pointer-events: auto; /* Re-enable for the CTA button */
+}
+
+.heading__line-1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3.4rem, 5.8vw, 5.4rem);
+  font-weight: 400;
+  color: var(--color-text-white);
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--color-accent-red);
+  font-weight: 700;
+}
+
+.heading__line-2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-weight: 300;
+  color: var(--color-text-light);
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.heading-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--color-accent-red);
+  color: var(--color-text-white);
+  padding: 13px 30px;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.heading-cta:hover {
+  background-color: var(--color-accent-red);
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(255, 77, 90, 0.4);
+}
+
+.heading__arrow {
+  transition: transform 0.3s ease;
+}
+
+.heading-cta:hover .heading__arrow {
+  transform: rotate(90deg);
+}
+
+/* -------------------- Sticky Navigation Bar -------------------- */
+.navigation-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-bg-primary);
+  border-bottom: 3px solid #282828;
+  height: var(--nav-height);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation-bar.scrolled {
+  background-color: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 8px;
+}
+
+.navigation__item a {
+  display: block;
+  padding: 14px 22px;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text-white);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navigation__item a:hover {
+  color: var(--color-accent-red);
+}
+
+.navigation__item--active a {
+  color: var(--color-accent-red) !important;
+}
+
+/* -------------------- Common Section Elements -------------------- */
