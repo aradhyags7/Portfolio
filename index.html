@@ -432,6 +432,22 @@
 
     <p class="contact__subtitle">
       Have a question or want to collaborate on research or systems? Leave your details and I'll get back to you as soon as possible.
+    <!-- Email Quick Copy Bar -->
+    <div class="contact-email-bar">
+      <span class="email-icon">✉</span>
+      <span class="email-val" id="email-text">aradhyashinde2330@gmail.com</span>
+      <button class="copy-email-btn" id="copy-email-btn">Copy</button>
+    </div>
+
+    <!-- Contact Form (benscott.dev style) -->
+    <form class="contact-form" id="contact-form">
+      <input type="text" id="form-name" placeholder="Name" required class="contact-input" />
+      <input type="email" id="form-email" placeholder="Enter email" required class="contact-input" />
+      <textarea id="form-message" placeholder="Your Message" rows="6" required class="contact-input contact-textarea"></textarea>
+      <div class="form-btn-wrap">
+        <button type="submit" class="contact-submit-btn" id="contact-submit">SUBMIT</button>
+      </div>
+      <div class="form-status" id="form-status"></div>
 </body>
 </html>
 
