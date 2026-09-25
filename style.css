@@ -373,3 +373,48 @@ button {
   align-items: center;
   background-color: var(--color-bg-primary);
   border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-showcase:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.project-showcase--reverse {
+  flex-direction: row-reverse;
+}
+
+/* Large Color Backdrops */
+.project-showcase__banner {
+  flex: 1.1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.banner--royal { background: linear-gradient(135deg, #18114f 0%, #0c082b 100%); }
+.banner--violet { background: linear-gradient(135deg, #2b0e4a 0%, #130524 100%); }
+.banner--cyan { background: linear-gradient(135deg, #09283b 0%, #04141e 100%); }
+.banner--teal { background: linear-gradient(135deg, #0d302a 0%, #051916 100%); }
+.banner--night { background: linear-gradient(135deg, #172138 0%, #090e1c 100%); }
+.banner--amber { background: linear-gradient(135deg, #301f0b 0%, #170d04 100%); }
+.banner--crimson { background: linear-gradient(135deg, #3b0d19 0%, #1a0409 100%); }
+
+/* Code Mockup Window */
+.mockup-window {
+  width: 100%;
+  max-width: 480px;
+  background-color: rgba(14, 18, 28, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
