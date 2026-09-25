@@ -5,6 +5,43 @@
 // ==========================================================================
 
 // -------------------- 1. Project Modal Data --------------------
+const projectsData = {
+  adaptivevec: {
+    title: "AdaptiveVec",
+    tagline: "Vector Retrieval Proximity Graph (C++17 / AVX2 SIMD)",
+    desc: "AdaptiveVec introduces an adaptive graph pruning and greedy beam-search traversal designed specifically for edge hardware and memory-constrained vector databases. Utilizing hardware SIMD intrinsics (Intel AVX2), it accelerates high-dimensional inner-product and L2 Euclidean distance computations while maintaining tight recall guarantees.",
+    metrics: [
+      { val: "< 0.42 ms", lbl: "Search Latency" },
+      { val: "98.7%", lbl: "Recall@10" },
+      { val: "3.4x", lbl: "SIMD Acceleration" }
+    ],
+    tags: ["C++17", "Intel AVX2 SIMD", "Python C-API", "Proximity Graphs", "ANN Vector Search", "Systems Research"],
+    github: "https://github.com/aradhyags7/AdaptiveVec"
+  },
+  "adamem-fde": {
+    title: "AdaMem-FDE",
+    tagline: "Adaptive Neural Memory Framework (PyTorch)",
+    desc: "AdaMem-FDE tackles catastrophic forgetting in deep neural networks undergoing sequential task streams. By dynamically estimating feature drift across latent representations and allocating selective episodic replay buffers, it preserves critical latent representations without exploding parameter counts.",
+    metrics: [
+      { val: "15/15", lbl: "Tests Passing" },
+      { val: "89.2%", lbl: "Synaptic Retention" },
+      { val: "PyTorch 2.2+", lbl: "Core Engine" }
+    ],
+    tags: ["PyTorch", "Python", "Continual Learning", "Episodic Memory", "Synaptic Regularization", "Deep Learning"],
+    github: "https://github.com/aradhyags7/AdaMem-FDE"
+  },
+  aegis: {
+    title: "Aegis",
+    tagline: "Privacy-First Local AI Desktop Assistant",
+    desc: "Aegis provides seamless desktop assistance without transmitting voice or confidential files to external servers. It orchestrates Faster-Whisper for near-instant speech-to-text, connected directly to Ollama for local LLM inference, with native operating system hooks and audio streaming.",
+    metrics: [
+      { val: "100%", lbl: "Offline & Private" },
+      { val: "< 350 ms", lbl: "Whisper STT" },
+      { val: "0 Bytes", lbl: "Cloud Telemetry" }
+    ],
+    tags: ["TypeScript", "Ollama", "Faster-Whisper", "Local LLMs", "Desktop App", "Audio Streaming"],
+    github: "https://github.com/aradhyags7/Aegis"
+};
     tagline: "Collaborative Academic Note & Doubt Hub (Flutter / Firebase)",
     desc: "Resource Shelf is a cross-platform Flutter application built to centralize academic learning materials and encourage peer-to-peer academic support. It replaces scattered study materials with structured subject-wise channels, interactive PDF/image note viewing and cloud storage, real-time doubt discussion forums, and user study libraries.",
     metrics: [
