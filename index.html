@@ -278,6 +278,44 @@
               <span class="circle red"></span>
               <span class="circle yellow"></span>
               <span class="circle green"></span>
+              <span class="mockup-title">twoofus_e2ee_crypto.dart</span>
+            </div>
+            <div class="mockup-window__body">
+              <div class="code-line"><span class="c-kw">final</span> keyAgreement = X25519ECDH(devicePrivateKey);</div>
+              <div class="code-line"><span class="c-kw">final</span> sharedSecret = keyAgreement.compute(partnerPublicKey);</div>
+              <div class="code-line"><span class="c-kw">final</span> cipher = XSalsa20Poly1305.encrypt(plaintext, nonce);</div>
+              <div class="code-line"><span class="c-kw">await</span> syncSocket.emitEncryptedPayload(cipher.payload);</div>
+              <div class="code-status">
+                <span class="status-badge">&gt; Curve25519 ECDH</span>
+                <span class="status-badge">&gt; XSalsa20-Poly1305</span>
+                <span class="status-badge">&gt; 35/35 Tests Passing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-showcase__content">
+          <h3 class="project-title">TwoOfUs</h3>
+          <h4 class="project-subtitle">Private &amp; Secure Couple Space (E2EE)</h4>
+          <p class="project-desc">
+            An intimate, zero-knowledge end-to-end encrypted private sanctuary built with Flutter &amp; FastAPI. Engineered with Curve25519 asymmetric key exchange, XSalsa20-Poly1305 ciphers, out-of-band safety numbers, and multi-method 2FA.
+          </p>
+          <div class="project-links">
+            <button class="project-btn-learn" data-id="twoofus">LEARN MORE</button>
+            <a href="https://github.com/aradhyags7/TwoOfUs" target="_blank" rel="noopener noreferrer" class="project-btn-source">SOURCE CODE</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 5: Smriti -->
+      <article class="project-showcase" id="project-smriti">
+        <div class="project-showcase__banner banner--teal">
+          <!-- Visual Mockup Card -->
+          <div class="mockup-window">
+            <div class="mockup-window__bar">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
     </div>
   </section>
 </body>
