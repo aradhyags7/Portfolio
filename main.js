@@ -128,3 +128,53 @@ function initConstellationCanvas() {
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.strokeStyle = `rgba(81, 162, 233, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  resize();
+  animate();
+}
+
+// -------------------- 3. Sticky Navigation & Active Section Tracking --------------------
+function initStickyNavbar() {
+  const navbar = document.getElementById("navbar");
+  const navItems = document.querySelectorAll(".navigation__item");
+  const sections = ["hero", "about", "projects", "contact"].map(id => document.getElementById(id)).filter(Boolean);
+
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY;
+
+    // Sticky shadow
+    if (scrollPos > 100) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+
+    // Active Section Detection
+    let currentSection = "hero";
+    const offset = window.innerHeight * 0.35;
+
+    sections.forEach(sec => {
+      const top = sec.offsetTop - offset;
+      const height = sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentSection = sec.getAttribute("id");
+      }
+    });
+
+    navItems.forEach(item => {
+      if (item.getAttribute("data-target") === currentSection) {
+        item.classList.add("navigation__item--active");
+      } else {
+        item.classList.remove("navigation__item--active");
+      }
+    });
+  });
+}
