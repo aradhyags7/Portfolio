@@ -392,6 +392,44 @@
               <span class="circle yellow"></span>
               <span class="circle green"></span>
               <span class="mockup-title">resource_shelf_community.dart</span>
+            </div>
+            <div class="mockup-window__body">
+              <div class="code-line"><span class="c-kw">class</span> <span class="c-type">NoteUploadBloc</span> <span class="c-kw">extends</span> Bloc&lt;NoteEvent, NoteState&gt; {</div>
+              <div class="code-line">  <span class="c-kw">final</span> firestore = FirebaseFirestore.instance;</div>
+              <div class="code-line">  <span class="c-kw">await</span> storage.uploadSubjectNotes(pdfFile, metadata);</div>
+              <div class="code-line">  communityForum.broadcastDoubtDiscussion(questionId);</div>
+              <div class="code-status">
+                <span class="status-badge">&gt; Flutter Cross-Platform</span>
+                <span class="status-badge">&gt; Firebase Architecture</span>
+                <span class="status-badge">&gt; Peer Study Hub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-showcase__content">
+          <h3 class="project-title">Resource Shelf</h3>
+          <h4 class="project-subtitle">Collaborative Academic Note &amp; Doubt Hub</h4>
+          <p class="project-desc">
+            A cross-platform Flutter application centralizing academic learning materials, peer-to-peer doubt discussions, subject-wise collaborative forums, and cloud PDF/image notes indexing.
+          </p>
+          <div class="project-links">
+            <button class="project-btn-learn" data-id="resourceshelf">LEARN MORE</button>
+            <a href="https://github.com/aradhyags7/resource-shelf" target="_blank" rel="noopener noreferrer" class="project-btn-source">SOURCE CODE</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="section contact" id="contact">
+    <div class="section-heading-wrap">
+      <h2 class="section-heading">Contact</h2>
+      <div class="heading-bar"></div>
+    </div>
+
     </div>
   </section>
 </body>
