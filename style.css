@@ -463,3 +463,83 @@ button {
 .c-type { color: #a855f7; }
 .c-func { color: #10b981; }
 .c-comment { color: #64748b; font-style: italic; }
+
+.code-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-badge {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-accent-cyan);
+}
+
+/* Right Content in Showcase */
+.project-showcase__content {
+  flex: 0.9;
+  padding: 40px 50px;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 3.4vw, 3.4rem);
+  font-weight: 700;
+  color: var(--color-text-white);
+  line-height: 1.15;
+}
+
+.project-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-accent-red);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
+.project-desc {
+  font-size: 1.5rem;
+  color: var(--color-text-subtle);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* Action Links with Signature Underline Accent */
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.project-btn-learn, .project-btn-source {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-white);
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.project-btn-learn {
+  border-bottom: 3px solid var(--color-accent-red);
+}
+
+.project-btn-learn:hover {
+  color: var(--color-accent-red);
+  transform: translateY(-2px);
+}
+
+.project-btn-source {
