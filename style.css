@@ -58,3 +58,38 @@ a {
 
 button {
   font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.connecting-dots {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.heading {
+  position: relative;
+  z-index: 2;
