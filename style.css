@@ -356,3 +356,20 @@ button {
 
 .skill-card__name {
   font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+  letter-spacing: 0.06em;
+}
+
+/* -------------------- Projects Showcase (Ben Scott Signature Style) -------------------- */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.project-showcase {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-primary);
+  border-radius: 14px;
