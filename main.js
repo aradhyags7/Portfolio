@@ -79,6 +79,7 @@ const projectsData = {
     github: "https://github.com/aradhyags7/CosmoLens"
   },
   resourceshelf: {
+    title: "Resource Shelf",
     tagline: "Collaborative Academic Note & Doubt Hub (Flutter / Firebase)",
     desc: "Resource Shelf is a cross-platform Flutter application built to centralize academic learning materials and encourage peer-to-peer academic support. It replaces scattered study materials with structured subject-wise channels, interactive PDF/image note viewing and cloud storage, real-time doubt discussion forums, and user study libraries.",
     metrics: [
@@ -354,5 +355,27 @@ function initContactForm() {
     setTimeout(() => {
       window.location.href = `mailto:aradhyashinde2330@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
     }, 600);
+  });
+}
+
+// -------------------- Initialization --------------------
+function startApp() {
+  initConstellationCanvas();
+  initStickyNavbar();
+  initProjectModals();
+  initContactForm();
+
+  // Universal smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
   });
 }
