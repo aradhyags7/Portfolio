@@ -65,7 +65,20 @@ const projectsData = {
     ],
     tags: ["Flutter 3.19+", "FastAPI", "PostgreSQL 15+", "Python 3.11+", "Cognitive Care", "Dementia Therapy", "Healthcare"],
     github: "https://github.com/aradhyags7/Smriti"
-};
+  },
+  cosmolens: {
+    title: "CosmoLens",
+    tagline: "Deep Sky & Real-Time Satellite Visualization",
+    desc: "CosmoLens connects astronomy enthusiasts with orbital mechanics calculations. By pulling Two-Line Element (TLE) datasets and utilizing SGP4 orbital propagation, it computes overhead satellite passes, ISS visual visibility windows, and interactive deep-sky star charts.",
+    metrics: [
+      { val: "Real-Time", lbl: "Orbital Tracking" },
+      { val: "SGP4", lbl: "Orbit Propagator" },
+      { val: "TLE", lbl: "Ephemeris Engine" }
+    ],
+    tags: ["Python", "Orbital Mechanics", "Ephemeris Calculation", "SGP4", "Data Visualization", "Astronomy"],
+    github: "https://github.com/aradhyags7/CosmoLens"
+  },
+  resourceshelf: {
     tagline: "Collaborative Academic Note & Doubt Hub (Flutter / Firebase)",
     desc: "Resource Shelf is a cross-platform Flutter application built to centralize academic learning materials and encourage peer-to-peer academic support. It replaces scattered study materials with structured subject-wise channels, interactive PDF/image note viewing and cloud storage, real-time doubt discussion forums, and user study libraries.",
     metrics: [
