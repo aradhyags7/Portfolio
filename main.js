@@ -127,3 +127,4 @@ function initConstellationCanvas() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(81, 162, 233, ${alpha})`;
