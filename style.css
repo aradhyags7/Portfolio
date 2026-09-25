@@ -593,3 +593,87 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  position: relative;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 40px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--color-accent-red);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+}
+
+.modal-tagline {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-accent-red);
+  text-transform: uppercase;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.modal-body-text {
+  font-size: 1.5rem;
+  color: var(--color-text-subtle);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.modal-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.m-val {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  display: block;
+}
+
+.m-lbl {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+  display: block;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.m-tag {
+  font-size: 1.15rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-accent-cyan);
+}
