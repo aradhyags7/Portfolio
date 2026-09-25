@@ -583,6 +583,65 @@ button {
 .email-val {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.4rem;
+  color: var(--color-text-white);
+}
+
+.copy-email-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-light);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.copy-email-btn:hover {
+  background: var(--color-accent-red);
+  color: #ffffff;
+  border-color: var(--color-accent-red);
+}
+
+.contact-form {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-input {
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  border: none;
+  padding: 14px 18px;
+  color: var(--color-text-white);
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  outline: none;
+  transition: box-shadow 0.25s ease;
+  margin-bottom: 4px;
+}
+
+.contact-input:focus {
+  box-shadow: inset 0 0 0 2px var(--color-accent-red);
+}
+
+.contact-textarea {
+  resize: vertical;
+}
+
+.form-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.contact-submit-btn {
+  border: 2px solid var(--color-accent-red);
+  color: var(--color-text-white);
+  padding: 10px 30px;
+  font-family: var(--font-body);
   justify-content: center;
   color: var(--color-text-white);
   transition: all 0.25s ease;
