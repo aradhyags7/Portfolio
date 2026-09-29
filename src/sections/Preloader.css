@@ -1,0 +1,79 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  transition: opacity 0.7s var(--ease-inout), visibility 0.7s;
+}
+
+.preloader.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.preloader-mark {
+  font-family: var(--font-display);
+  font-weight: 760;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.preloader-mark span {
+  color: var(--accent);
+}
+
+.preloader-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preloader-num {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.preloader-bar {
+  position: relative;
+  width: 140px;
+  height: 1px;
+  background: var(--line-strong);
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+.preloader-enter {
+  animation: preloader-pop 0.5s var(--ease-bounce) both;
+}
+
+@keyframes preloader-pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.preloader-hint {
+  font-size: 0.62rem;
+  color: var(--ink-faint);
+}
