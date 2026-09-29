@@ -1,0 +1,71 @@
+.vault {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem;
+  gap: 0.8rem;
+}
+
+.vault-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vault-titlebar .mono-label {
+  font-size: 0.6rem;
+}
+
+.vault-state {
+  color: #ff4655;
+  transition: color 0.3s;
+}
+
+.vault-state.is-on {
+  color: var(--vault-accent);
+}
+
+.vault-body {
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #05050a;
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 1.4vw, 0.8rem);
+  line-height: 1.9;
+  color: var(--ink-dim);
+  overflow: hidden;
+  white-space: pre;
+  transition: border-color 0.4s, color 0.4s, box-shadow 0.4s;
+}
+
+.vault.is-locked .vault-body {
+  border-color: var(--vault-accent);
+  color: var(--vault-accent);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--vault-accent) 18%, transparent);
+}
+
+.vault-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.vault-btn:hover {
+  border-color: var(--vault-accent);
+  color: var(--vault-accent);
+  background: color-mix(in srgb, var(--vault-accent) 10%, transparent);
+}
