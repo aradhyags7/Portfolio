@@ -1,0 +1,125 @@
+.case-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(4, 4, 9, 0.72);
+  backdrop-filter: blur(14px);
+}
+
+.case-panel {
+  width: min(920px, 100%);
+  max-height: min(86vh, 100%);
+  overflow-y: auto;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--project-accent) 35%, var(--line-strong));
+  background:
+    radial-gradient(80% 50% at 100% 0%, color-mix(in srgb, var(--project-accent) 10%, transparent), transparent 60%),
+    var(--surface);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+}
+
+.case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.case-index {
+  color: var(--project-accent);
+}
+
+.case-name {
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+.case-kind {
+  margin-top: 0.5rem;
+}
+
+.case-close {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  font-size: 1rem;
+  transition: transform 0.3s var(--ease-bounce), border-color 0.3s, color 0.3s;
+}
+
+.case-close:hover {
+  transform: rotate(90deg);
+  border-color: var(--project-accent);
+  color: var(--project-accent);
+}
+
+.case-kicker {
+  color: var(--ink);
+  margin-bottom: 1.8rem;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.case-sub {
+  margin-bottom: 0.8rem;
+  color: var(--project-accent);
+}
+
+.case-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  color: var(--ink-dim);
+}
+
+.case-bullets li {
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.case-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--project-accent);
+}
+
+.case-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.case-impact {
+  padding: 1.1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--project-accent) 7%, transparent);
+}
+
+.case-impact p:last-child {
+  color: var(--ink);
+}
+
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+@media (max-width: 760px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
