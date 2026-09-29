@@ -1,0 +1,80 @@
+.contact {
+  min-height: 92svh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(50% 60% at 50% 100%, rgba(0, 229, 255, 0.06), transparent 70%), var(--bg);
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.contact-heading {
+  text-transform: uppercase;
+}
+
+.contact-sub {
+  max-width: 40ch;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-copy {
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+.contact-copy.is-copied {
+  background: #2ee6a8;
+  border-color: #2ee6a8;
+}
+
+.contact-mailto {
+  font-size: 0.62rem;
+  color: var(--ink-faint);
+}
+
+.contact-mailto:hover {
+  color: var(--accent);
+}
+
+.contact-footer kbd {
+  font-family: var(--font-mono);
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  font-size: 0.58rem;
+}
+
+.contact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: clamp(4rem, 10vh, 7rem);
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.contact-footer .mono-label {
+  font-size: 0.62rem;
+}
+
+.contact-footer-links {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.contact-footer-links a:hover {
+  color: var(--accent);
+}
