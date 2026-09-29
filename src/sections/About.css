@@ -1,0 +1,54 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 62ch;
+}
+
+.about-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.about-links .btn {
+  justify-content: space-between;
+}
+
+.about-interests {
+  margin-top: clamp(3rem, 7vh, 5rem);
+}
+
+.about-links .magnetic {
+  display: block;
+}
+
+.about-links .magnetic .btn {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.about em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
