@@ -1,0 +1,123 @@
+.heatmap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  --cell: 12px;
+  --gap: 3px;
+}
+
+.heatmap-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.heatmap-total {
+  color: var(--ink-dim);
+}
+
+.heatmap-total-num {
+  font-family: var(--font-display);
+  font-weight: 750;
+  font-size: 1.6rem;
+  color: var(--ink);
+  margin-right: 0.3rem;
+}
+
+.heatmap-badge {
+  font-size: 0.58rem;
+  color: var(--ink-faint);
+}
+
+.heatmap-badge.is-live {
+  color: #2ee6a8;
+}
+
+.heatmap-scroll {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.heatmap-months {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(var(--cell) + var(--gap));
+  font-size: 0.55rem;
+  margin-bottom: 0.4rem;
+  min-width: max-content;
+}
+
+.heatmap-grid {
+  display: flex;
+  gap: var(--gap);
+  min-width: max-content;
+}
+
+.heatmap-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.heatmap-cell {
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 3px;
+  background: #14141d;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out),
+    box-shadow 0.2s;
+  transition-delay: var(--d, 0ms);
+}
+
+.heatmap-grid.is-in .heatmap-cell {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heatmap-cell[data-level='1'] { background: #0b3b46; }
+.heatmap-cell[data-level='2'] { background: #0a6e80; }
+.heatmap-cell[data-level='3'] { background: #00b8cf; }
+.heatmap-cell[data-level='4'] {
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.55);
+}
+
+.heatmap-cell:hover {
+  box-shadow: 0 0 0 1.5px var(--ink);
+}
+
+.heatmap-link {
+  align-self: flex-end;
+  font-size: 0.6rem;
+}
+
+.heatmap-link:hover {
+  color: var(--accent);
+}
+
+.heatmap-tip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-size: 0.6rem;
+  color: var(--ink);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heatmap-cell {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

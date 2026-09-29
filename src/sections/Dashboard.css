@@ -1,0 +1,24 @@
+.dash-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+}
+
+
+.dash-panel {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.6rem;
+  background: var(--bg-2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-height: 320px;
+}
+
+.dash-panel-body {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  color: var(--ink-faint);
+}
