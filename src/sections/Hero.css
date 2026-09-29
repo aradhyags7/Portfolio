@@ -1,0 +1,126 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(5rem, 10vh, 8rem) 0 clamp(3rem, 8vh, 6rem);
+  overflow: clip;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vh, 2.5rem);
+}
+
+.hero-kicker {
+  color: var(--accent);
+}
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-mask {
+  display: block;
+  overflow: clip;
+}
+
+.hero-line {
+  display: block;
+  transform: translateY(114%);
+  transition: transform 1.1s var(--ease-out);
+}
+
+.hero-mask:nth-child(2) .hero-line {
+  transition-delay: 0.12s;
+}
+
+.hero-line-2 {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink);
+}
+
+.hero-kicker,
+.hero-foot {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.hero-foot {
+  transition-delay: 0.35s;
+}
+
+.hero-kicker {
+  transition-delay: 0.5s;
+}
+
+.app.is-entered .hero-line {
+  transform: translateY(0);
+}
+
+.app.is-entered .hero-kicker,
+.app.is-entered .hero-foot {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line,
+  .hero-kicker,
+  .hero-foot {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.hero-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-sub {
+  max-width: 34ch;
+}
+
+.hero-cue {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.62rem;
+  writing-mode: vertical-rl;
+}
+
+.hero-cue-line {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: cue-drop 1.8s var(--ease-inout) infinite;
+  transform-origin: top center;
+}
+
+@keyframes cue-drop {
+  0% { transform: scaleY(0); }
+  45% { transform: scaleY(1); }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cue-line { animation: none; }
+}
+
+@media (max-width: 560px) {
+  .hero-cue {
+    display: none;
+  }
+}
