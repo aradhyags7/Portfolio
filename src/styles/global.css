@@ -1,0 +1,190 @@
+@import './tokens.css';
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+  scrollbar-color: #26262f var(--bg);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-display);
+  font-weight: 420;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent);
+  color: #04040a;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- type scale ---------- */
+.display-xl {
+  font-size: clamp(3.2rem, 12.5vw, 13rem);
+  line-height: 0.92;
+  font-weight: 760;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.display-lg {
+  font-size: clamp(2.4rem, 7vw, 6.5rem);
+  line-height: 0.98;
+  font-weight: 720;
+  letter-spacing: -0.015em;
+}
+
+.display-md {
+  font-size: clamp(1.6rem, 3.6vw, 3.2rem);
+  line-height: 1.05;
+  font-weight: 650;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.body-lg {
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+
+/* ---------- layout ---------- */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+section[data-section] {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+main {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* ---------- film grain ---------- */
+.grain {
+  position: fixed;
+  inset: -60%;
+  z-index: var(--z-grain);
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+  animation: grain-jitter 0.9s steps(6) infinite;
+}
+
+@keyframes grain-jitter {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2%, 3%); }
+  40% { transform: translate(3%, -2%); }
+  60% { transform: translate(-3%, -3%); }
+  80% { transform: translate(2%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- 3D layers ---------- */
+.scene-canvas {
+  position: fixed !important;
+  inset: 0;
+  z-index: var(--z-scene);
+  pointer-events: none;
+}
+
+.mascot-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-scene);
+  pointer-events: none;
+}
+
+.mascot-view {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-view {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ---------- helpers ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* custom cursor takes over on fine pointers once app mounts */
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role='button'] {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
