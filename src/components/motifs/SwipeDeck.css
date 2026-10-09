@@ -47,7 +47,7 @@
 
 .swipe-wants {
   font-size: 0.58rem;
-  color: #ff4d9d;
+  color: #10b981;
 }
 
 .swipe-stamp {
@@ -65,14 +65,14 @@
 
 .swipe-stamp.is-match {
   left: 14px;
-  color: #2ee6a8;
-  border-color: #2ee6a8;
+  color: #10b981;
+  border-color: #10b981;
 }
 
 .swipe-stamp.is-skip {
   right: 14px;
-  color: #ff4655;
-  border-color: #ff4655;
+  color: #f59e0b;
+  border-color: #f59e0b;
   transform: rotate(12deg);
 }
 

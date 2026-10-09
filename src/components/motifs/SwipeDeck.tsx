@@ -3,28 +3,28 @@ import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { sfx } from '../../audio/synth'
 import './SwipeDeck.css'
 
-interface Profile {
+interface LessonCard {
   id: string
   name: string
-  role: string
-  wants: string
+  domain: string
+  concept: string
   emoji: string
-  self?: boolean
+  core?: boolean
 }
 
-const PROFILES: Profile[] = [
-  { id: 'p1', name: 'Aisha', role: 'Rust · systems', wants: 'hackathon partner', emoji: '🦀' },
-  { id: 'p2', name: 'Dev', role: 'Flutter · mobile', wants: 'co-founder energy', emoji: '📱' },
-  { id: 'p3', name: 'Mira', role: 'ML · vision', wants: 'weekend project', emoji: '👁️' },
-  { id: 'p4', name: 'Kabir', role: 'Go · backend', wants: 'open-source crew', emoji: '⚡' },
-  { id: 'p5', name: 'Aradhya', role: 'Systems · ML', wants: 'HPC & AI research', emoji: '⚡', self: true },
+const LESSONS: LessonCard[] = [
+  { id: 'l1', name: 'Calculus', domain: 'Symbolic Math', concept: 'SymPy step verification', emoji: '📐' },
+  { id: 'l2', name: 'Physics', domain: 'Simulation', concept: 'WebGPU 3D vector fields', emoji: '⚛️' },
+  { id: 'l3', name: 'CompSci', domain: 'Code Sandbox', concept: 'Monaco AST parser & trace', emoji: '💻' },
+  { id: 'l4', name: 'Biology', domain: 'Molecular 3D', concept: 'Interactive MolStar PDB', emoji: '🧬' },
+  { id: 'l5', name: 'Mentora AI', domain: 'Autonomous Teacher', concept: 'Sub-500ms WebRTC voice', emoji: '🎓', core: true },
 ]
 
-function TopCard({ profile, onGone }: { profile: Profile; onGone: (dir: 1 | -1) => void }) {
+function TopCard({ card, onGone }: { card: LessonCard; onGone: (dir: 1 | -1) => void }) {
   const x = useMotionValue(0)
   const rotate = useTransform(x, [-220, 220], [-16, 16])
-  const matchOpacity = useTransform(x, [40, 130], [0, 1])
-  const skipOpacity = useTransform(x, [-130, -40], [1, 0])
+  const masterOpacity = useTransform(x, [40, 130], [0, 1])
+  const reviewOpacity = useTransform(x, [-130, -40], [1, 0])
 
   return (
     <motion.div
@@ -41,8 +41,8 @@ function TopCard({ profile, onGone }: { profile: Profile; onGone: (dir: 1 | -1) 
           sfx.chirp()
           void animate(x, 480, { duration: 0.32, ease: 'easeIn' }).then(() => onGone(1))
         } else if (power < -110) {
-          if (profile.self) {
-            // you can't skip the guy whose portfolio this is
+          if (card.core) {
+            // the AI teacher stays in the classroom
             sfx.boing()
             void animate(x, 0, { type: 'spring', stiffness: 320, damping: 18 })
           } else {
@@ -52,28 +52,28 @@ function TopCard({ profile, onGone }: { profile: Profile; onGone: (dir: 1 | -1) 
         }
       }}
     >
-      <span className="swipe-emoji" aria-hidden="true">{profile.emoji}</span>
-      <strong className="swipe-name">{profile.name}</strong>
-      <span className="swipe-role">{profile.role}</span>
-      <span className="swipe-wants mono-label">wants: {profile.wants}</span>
-      <motion.span className="swipe-stamp is-match" style={{ opacity: matchOpacity }}>
-        MATCH
+      <span className="swipe-emoji" aria-hidden="true">{card.emoji}</span>
+      <strong className="swipe-name">{card.name}</strong>
+      <span className="swipe-role">{card.domain}</span>
+      <span className="swipe-wants mono-label">focus: {card.concept}</span>
+      <motion.span className="swipe-stamp is-match" style={{ opacity: masterOpacity }}>
+        MASTERED
       </motion.span>
-      <motion.span className="swipe-stamp is-skip" style={{ opacity: profile.self ? 0 : skipOpacity }}>
-        SKIP
+      <motion.span className="swipe-stamp is-skip" style={{ opacity: card.core ? 0 : reviewOpacity }}>
+        REVIEW
       </motion.span>
-      {profile.self && <span className="swipe-hint mono-label">(this one only swipes right)</span>}
+      {card.core && <span className="swipe-hint mono-label">(AI teacher is permanent)</span>}
     </motion.div>
   )
 }
 
-/** Codeswipe — an actually swipeable deck. */
+/** Mentora dynamic classroom lesson deck. */
 export default function SwipeDeck() {
-  const [order, setOrder] = useState(PROFILES)
-  const [matches, setMatches] = useState(0)
+  const [order, setOrder] = useState(LESSONS)
+  const [mastered, setMastered] = useState(0)
 
   const rotateDeck = (dir: 1 | -1) => {
-    if (dir === 1) setMatches((m) => m + 1)
+    if (dir === 1) setMastered((m) => m + 1)
     setOrder((prev) => [...prev.slice(1), prev[0]])
   }
 
@@ -83,7 +83,7 @@ export default function SwipeDeck() {
         .slice(0, 3)
         .map((p, i) =>
           i === 0 ? (
-            <TopCard key={p.id} profile={p} onGone={rotateDeck} />
+            <TopCard key={p.id} card={p} onGone={rotateDeck} />
           ) : (
             <div
               key={p.id}
@@ -93,13 +93,13 @@ export default function SwipeDeck() {
             >
               <span className="swipe-emoji">{p.emoji}</span>
               <strong className="swipe-name">{p.name}</strong>
-              <span className="swipe-role">{p.role}</span>
+              <span className="swipe-role">{p.domain}</span>
             </div>
           ),
         )
         .reverse()}
       <span className="swipe-counter mono-label">
-        {matches} match{matches === 1 ? '' : 'es'} · drag the card
+        {mastered} concept{mastered === 1 ? '' : 's'} mastered · drag to evaluate
       </span>
     </div>
   )
