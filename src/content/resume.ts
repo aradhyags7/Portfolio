@@ -125,23 +125,23 @@ export const projects: Project[] = [
     links: { repo: 'https://github.com/aradhyags7/TwoOfUs', live: '' },
   },
   {
-    id: 'smriti',
+    id: 'mentora',
     index: '05',
-    name: 'Smriti (स्मृति)',
-    short: 'Smriti',
-    kind: 'AI-Assisted Cognitive Care Platform',
+    name: 'Mentora',
+    short: 'Mentora',
+    kind: 'Adaptive Multimodal AI Classroom',
     year: '2026',
-    accent: '#2ee6a8',
+    accent: '#10b981',
     motif: 'deck',
-    kicker: 'Offline-first memory preservation & clinical care for MCI and dementia.',
+    kicker: 'The AI teacher that doesn\'t just answer — it teaches in real-time.',
     bullets: [
-      'Cognitive care and reminiscence therapy platform built for elderly patients with mild cognitive impairment & early dementia.',
-      'Offline-first synchronization tailored for rural infrastructure, featuring localized dialect voice prompts (including Assamese).',
-      'Caregiver telemetry dashboard tracking recall latency, semantic drift, and cognitive stability over time.',
+      'Autonomous multimodal AI virtual classroom orchestrating live teaching sessions with sub-500ms LiveKit WebRTC streaming voice and natural barge-in.',
+      'Interactive infinite whiteboard featuring digital handwriting stroke capture, mathematical OCR, and symbolic SymPy step-by-step verification.',
+      'Real-time 3D physics & molecular simulations (Three.js/R3F) and isolated Monaco code execution sandboxes with AST visualization.',
     ],
-    impact: '87 Backend & 323 Flutter tests passing · Designed for North East clinical deployment',
-    tech: ['Flutter', 'Dart', 'FastAPI', 'PostgreSQL', 'Offline-First', 'SQLite'],
-    links: { repo: 'https://github.com/aradhyags7/Smriti', live: '' },
+    impact: 'Sub-500ms voice pipeline · Dynamic pedagogical state machine · Multimodal 3D simulation',
+    tech: ['Next.js 15', 'TypeScript', 'FastAPI', 'Three.js', 'LiveKit WebRTC', 'SymPy', 'Python 3.12', 'PostgreSQL'],
+    links: { repo: 'https://github.com/aradhyags7/Mentora', live: '' },
   },
 ]
 
@@ -180,11 +180,11 @@ export const experience: Role[] = [
     period: '2025 — Present',
     location: 'Remote',
     bullets: [
-      'Engineered cross-platform clinical mobile applications (Smriti) with 410 total backend and Flutter integration test cases.',
+      'Architected Mentora, an adaptive multimodal AI teaching platform with LiveKit WebRTC low-latency streaming and symbolic SymPy equation verification.',
       'Built astronomical ephemeris and satellite tracking engine (CosmoLens) with real-time SGP4 orbital propagation.',
       'Maintained 100% test coverage benchmarks across core algorithmic and cryptographic modules.',
     ],
-    tech: ['Flutter', 'Dart', 'Python', 'Docker', 'PostgreSQL', 'Git / Linux'],
+    tech: ['Next.js 15', 'TypeScript', 'FastAPI', 'LiveKit', 'Python', 'Three.js', 'PostgreSQL', 'Docker'],
   },
 ]
 
@@ -196,6 +196,12 @@ export interface Milestone {
 }
 
 export const timeline: Milestone[] = [
+  {
+    year: '2026',
+    title: 'Mentora Multimodal AI Classroom',
+    detail: 'Architected real-time AI teaching platform with sub-500ms WebRTC voice, interactive whiteboard, and symbolic math engine.',
+    highlight: true,
+  },
   {
     year: '2026',
     title: 'AdaMem-FDE Neural Memory Framework',
@@ -213,11 +219,6 @@ export const timeline: Milestone[] = [
     title: 'Aegis Sovereign AI Assistant',
     detail: 'Deployed offline voice intelligence with sub-350ms Whisper STT and zero cloud telemetry.',
     highlight: true,
-  },
-  {
-    year: '2026',
-    title: 'Smriti Cognitive Care Platform',
-    detail: 'Designed offline-first dialect-enabled dementia care platform with 410 unit and integration tests.',
   },
   {
     year: '2026',
@@ -243,7 +244,7 @@ export const interests = [
   'Zero-knowledge cryptography',
   'Local-first & Sovereign edge AI',
   'Low-latency C++ systems',
-  'Offline clinical technologies',
+  'Multimodal AI & Interactive Pedagogical Systems',
 ]
 
 export const sections = [
