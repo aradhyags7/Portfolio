@@ -36,7 +36,7 @@ This repository hosts the source code for **Aradhya Shinde**'s personal portfoli
 | **02** | [**AdaMem-FDE**](https://github.com/aradhyags7/AdaMem-FDE) | PyTorch 2.2+, Continual Learning | Continual neural memory • `15/15` tests passing • `89.2%` retention • Feature Distribution Estimation |
 | **03** | [**Aegis**](https://github.com/aradhyags7/Aegis) | TypeScript, Faster-Whisper, Ollama | Local-first AI desktop assistant • `100%` offline & private • `< 350 ms` STT latency • Zero cloud telemetry |
 | **04** | [**TwoOfUs**](https://github.com/aradhyags7/TwoOfUs) | Flutter, FastAPI, PostgreSQL | E2EE private couple space • Curve25519 ECDH • XSalsa20-Poly1305 • `35/35` tests passing |
-| **05** | [**Smriti (स्मृति)**](https://github.com/aradhyags7/Smriti) | Flutter, FastAPI, PostgreSQL | Cognitive care platform for dementia & MCI • `87` backend & `323` Flutter tests • Offline-first |
+| **05** | [**Mentora**](https://github.com/aradhyags7/Mentora) | Next.js 15, FastAPI, LiveKit, Three.js | Adaptive multimodal AI classroom • `< 500 ms` WebRTC voice • Symbolic SymPy math • 3D simulations |
 
 ---
 
